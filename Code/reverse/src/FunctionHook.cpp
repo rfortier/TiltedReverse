@@ -9,8 +9,6 @@
 
 namespace TiltedPhoques
 {
-    static void** GetImportedFunction(const wchar_t *acpModuleName, const char* acpLibraryName, const char* acpMethod) noexcept;
-
     FunctionHook::FunctionHook() noexcept
         : m_ppDetourFunction(nullptr)
         , m_pSystemFunction(nullptr)
@@ -117,7 +115,7 @@ namespace TiltedPhoques
         return pRealFunction;
     }
 
-    static void** GetImportedFunction(const wchar_t *acpModuleName, const char* acpLibraryName, const char* acpMethod) noexcept
+    void** GetImportedFunction(const wchar_t *acpModuleName, const char* acpLibraryName, const char* acpMethod) noexcept
     {
         const auto pBase = GetModuleHandleW(acpModuleName);
 

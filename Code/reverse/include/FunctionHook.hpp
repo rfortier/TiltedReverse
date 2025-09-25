@@ -7,6 +7,8 @@
 
 namespace TiltedPhoques
 {
+    void** GetImportedFunction(const wchar_t* acpModuleName, const char* acpLibraryName, const char* acpMethod) noexcept;
+
     struct FunctionHook
     {
         FunctionHook() noexcept;
